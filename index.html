@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Countdown Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Yeseva+One&display=swap" rel="stylesheet">
+
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -14,6 +22,8 @@
             margin: 0;
             background-color: #f0f0f0;
             color: #333;
+            /* padding: 20px; */
+           
         }
         #home{
             display: flex;
@@ -21,45 +31,102 @@
             height: 450px;
             justify-content: center;
             align-items: center;
-        
-        }
-        #home::before{
-            content: "";
-            /* background: url("../background.jpg") no-repeat center/cover; */
-            background: url("../background.jpg") no-repeat center center/cover;
+            background: url("../background3.jpg") no-repeat center center/cover;
             position: absolute;
             height: 100%;
             width: 100%;
             z-index: -1;
+        
         }
+
 
         .container {
             text-align: center;
-            background-color: rgba(240, 240, 240, 0.3); /* Light gray background with 70% opacity */
+            background-color: rgba(240, 240, 240, 0.5); /* Light gray background with 70% opacity */
             padding: 40px;
-            border: 2px solid rgba(240, 240, 240, 0.6); /* Border with the same opacity as the background */
+            border: 2px solid rgba(240, 240, 240, 0.8); /* Border with the same opacity as the background */
             border-radius: 10px;
+            margin: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
-            font-size: 2.5em;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 4em;
+            /* font-family: "Rubik", sans-serif; */
             margin-bottom: 20px;
-            color: #a600ff;
+            color: #000000;
+            font-weight: 500;
+            font-style: normal;
+            font-family: "Yeseva One", serif;
+            font-weight: 400;
+            font-style: normal;
         }
 
         h2 {
             font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #007bff;
+            margin-bottom: 10px;
+            color: #5f0101;
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+        h3 {
+            font-size: 1.5em;
+            margin-top: 0;
+            /* margin-bottom: 20px; */
+            color: #5f0101;
+            font-family: "Rubik", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
         }
 
 
         .timer {
             font-size: 2em;
+            margin-top: 20px;
             font-weight: bold;
-            color: #dc3545;
+            color: #000000;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.8em; /* Adjust for tablets */
+            }
+
+            h2 {
+                font-size: 2em; /* Adjust for tablets */
+            }
+            h3 {
+                font-size: 1.2em; /* Adjust for tablets */
+            }
+
+            .timer {
+                font-size: 1.4em; /* Adjust for tablets */
+            }
+
+            .container {
+                padding: 20px; /* Adjust padding for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em; /* Adjust for mobile phones */
+            }
+
+            h2 {
+                font-size: 1.4em; /* Adjust for mobile phones */
+            }
+            h3 {
+                font-size: 0.9em; /* Adjust for mobile phones */
+            }
+
+            .timer {
+                font-size: 1.1em; /* Adjust for mobile phones */
+            }
+
+            .container {
+                padding: 15px; /* Adjust padding for mobile phones */
+            }
         }
     </style>
 </head>
@@ -67,15 +134,19 @@
     <section id="home">
         <div class="container">
             <h1>Nadeem Weds Anam</h1>
-            <h2>Countdown to February 9th</h2>
+            <h2>February 9th 2025</h2>
             <div class="timer" id="countdown"></div>
+            <h2>وَخَلَقْنَاكُمْ أَزْوَاجًا </h2>
+            <h3>
+                (And we created you in pairs)
+            </h3>
         </div>
 
     </section>
 
     <script>
         // Set the date we're counting down to
-        var countDownDate = new Date("Feb 9, 2025 00:00:00").getTime();
+        var countDownDate = new Date("Feb 9, 2025 19:00:00").getTime();
 
         // Update the count down every 1 second
         var x = setInterval(function() {
