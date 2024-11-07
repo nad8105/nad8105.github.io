@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Yeseva+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
 
 
     <style>
@@ -145,6 +147,15 @@
     </section>
 
     <script>
+        // Fireworks effect on page load
+        function launchFireworks() {
+            confetti({
+                particleCount: 200,
+                spread: 100,
+                origin: { y: 0.6 }
+            });
+        }
+        window.onload = launchFireworks;
         // Set the date we're counting down to
         var countDownDate = new Date("Feb 9, 2025 19:00:00").getTime();
 
