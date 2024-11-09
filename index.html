@@ -6,41 +6,36 @@
     <title>Countdown Timer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,700&family=Great+Vibes&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
-
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
 
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            /* padding: 20px; */
-           
-        }
-        #home{
             display: flex;
-            flex-direction: column;
-            height: 450px;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+            color: #333;
             background: url("../background3.jpg") no-repeat center center/cover;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            z-index: -1;
-        
+
         }
 
+        .main-container {
+            text-align: center;
+        }
+
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
 
         .container {
             text-align: center;
@@ -57,13 +52,23 @@
             /* font-family: "Rubik", sans-serif; */
             margin-bottom: 20px;
             color: #000000;
-            font-weight: 500;
             font-style: normal;
             font-family: "Yeseva One", serif;
             font-weight: 400;
             font-style: normal;
         }
 
+        h2 {
+            font-size: 2em;
+            color: #333;
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-family: 'Playfair Display', serif;
+        }
         h2 {
             font-size: 2.5em;
             margin-bottom: 10px;
@@ -82,72 +87,86 @@
             font-style: normal;
         }
 
-
         .timer {
-            font-size: 2em;
+            font-size: 1.5em;
             margin-top: 20px;
             font-weight: bold;
-            color: #000000;
-        }
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.8em; /* Adjust for tablets */
-            }
-
-            h2 {
-                font-size: 2em; /* Adjust for tablets */
-            }
-            h3 {
-                font-size: 1.2em; /* Adjust for tablets */
-            }
-
-            .timer {
-                font-size: 1.4em; /* Adjust for tablets */
-            }
-
-            .container {
-                padding: 20px; /* Adjust padding for tablets */
-            }
+            color: #333;
         }
 
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2em; /* Adjust for mobile phones */
-            }
+        .button-container {
+            margin-top: 20px;
+        }
 
-            h2 {
-                font-size: 1.4em; /* Adjust for mobile phones */
-            }
-            h3 {
-                font-size: 0.9em; /* Adjust for mobile phones */
-            }
+        .invitation-container {
+            display: none;
+            text-align: center;
+            background-color: rgba(240, 240, 240, 0.6); /* Light gray background with 70% opacity */
+            padding: 40px;
+            border: 2px solid rgba(240, 240, 240, 1); /* Border with the same opacity as the background */
+            border-radius: 10px;
+            margin: 20px;
+            margin-bottom: 100px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-            .timer {
-                font-size: 1.1em; /* Adjust for mobile phones */
-            }
+        .invitation-container p {
+            margin: 5px 0;
+        }
 
-            .container {
-                padding: 15px; /* Adjust padding for mobile phones */
-            }
+        .invitation-container .highlight {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2em;
+            color: #b8860b; /* Gold color */
+        }
+
+        .invitation-container .names {
+            font-family:'Edwardian Script ITC', cursive;
+            font-size: 2.5em;
+            color: #ac7d07; /* Gold color */
+            font-weight: 550;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #5f0101;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <section id="home">
-        <div class="container">
-            <h1>Nadeem Weds Anam</h1>
-            <h2>February 9th 2025</h2>
-            <div class="timer" id="countdown"></div>
-            <h2>وَخَلَقْنَاكُمْ أَزْوَاجًا </h2>
-            <h3>
-                (And we created you in pairs)
-            </h3>
+    <div class="main-container">
+        <section id="home">
+            <div class="container">
+                <h1>Nadeem Weds Anam</h1>
+                <h2>February 9th, 2025</h2>
+                <div class="timer" id="countdown"></div>
+                <h2>وَخَلَقْنَاكُمْ أَزْوَاجًا</h2>
+                <h3>(And we created you in pairs)</h3>
+            </div>
+        </section>
+
+        <div class="button-container">
+            <button onclick="toggleInvitation()">Invitation</button>
         </div>
 
-    </section>
+        <div class="invitation-container" id="invitation">
+            <p><em>Mrs and Mr Idrees</em></p> <br>
+            <p>REQUEST THE HONOUR OF YOUR PRESENCE AT THE</p> <br>
+            <p class="highlight">Reception</p><br>
+            <p>TO BLESS THE NEWLYWEDS</p><br>
+            <p class="names">Nadeem & Anam</p><br>
+            <p><em>Monday, 10th Feb 2025</em></p><br>
+            <p>8:00 PM onwards</p><br>
+            <p><strong>Ahil Villa</strong><br> near Kalindi Kunj metro station,<br> New Delhi</p><br><br>
+        </div>
+    </div>
 
     <script>
-        // Fireworks effect on page load
         function launchFireworks() {
             confetti({
                 particleCount: 200,
@@ -156,34 +175,26 @@
             });
         }
         window.onload = launchFireworks;
-        // Set the date we're counting down to
+
         var countDownDate = new Date("Feb 9, 2025 19:00:00").getTime();
-
-        // Update the count down every 1 second
         var x = setInterval(function() {
-
-            // Get today's date and time
             var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
             var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes, and seconds
             var days = Math.floor(distance / (1000 * 60 * 60 * 24));
             var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the result in an element with id="countdown"
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-
-            // If the count down is over, write some text 
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("countdown").innerHTML = "EXPIRED";
             }
         }, 1000);
+
+        function toggleInvitation() {
+            var invitation = document.getElementById("invitation");
+            invitation.style.display = (invitation.style.display === "none" || invitation.style.display === "") ? "block" : "none";
+        }
     </script>
 </body>
 </html>
