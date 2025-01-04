@@ -126,7 +126,13 @@
             font-size: 2em;
             color: #b8860b; /* Gold color */
         }
+        .container .highlight {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3em;
+            margin: 5px;
+            color: #b8860b; /* Gold color */
 
+        }
         .invitation-container .names {
             font-family:'Edwardian Script ITC', cursive;
             font-size: 2.5em;
@@ -198,8 +204,9 @@
     <div class="main-container">
         <section id="home">
             <div class="container">
-                <h1>Nadeem Weds Anam</h1>
-                <h2>February 8th, 2025</h2>
+                <p class="highlight">Reception</p>
+                <h1>Nadeem & Anam</h1>
+                <h2>February 10th, 2025</h2>
                 <div class="timer" id="countdown"></div>
                 <h2>وَخَلَقْنَاكُمْ أَزْوَاجًا</h2>
                 <h3>(And we created you in pairs)</h3>
@@ -214,7 +221,7 @@
             <p><em>Mrs and Mr Idrees</em></p> <br>
             <p>REQUEST THE HONOUR OF YOUR PRESENCE AT THE</p> <br>
             <p class="highlight">Reception</p><br>
-            <p>TO BLESS THE NEWLYWEDS</p><br>
+            <p>TO BLESS THE COUPLE</p><br>
             <p class="names">Nadeem & Anam</p><br>
             <p><em>Monday, 10th Feb 2025</em></p><br>
             <p>8:00 PM onwards</p><br>
@@ -232,7 +239,7 @@
         }
         window.onload = launchFireworks;
 
-        var countDownDate = new Date("Feb 8, 2025 19:00:00").getTime();
+        var countDownDate = new Date("Feb 10, 2025 19:00:00").getTime();
         var x = setInterval(function() {
             var now = new Date().getTime();
             var distance = countDownDate - now;
